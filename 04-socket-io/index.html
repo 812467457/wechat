@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+hello
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    //连接socket服务
+    let socket = io('http://localhost:3000');
+    //浏览器注册服务端
+    socket.on('send',data =>{
+        console.log(data);
+    });
+
+    //向服务器发送数据
+    socket.emit('clientData',{name:'jack'});
+</script>
+</body>
+</html>
